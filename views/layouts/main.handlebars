@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Informações do projeto e autoria-->
+    <meta name="description" content="Pensamentos registrados com Node.js usando MySQL">
+    <meta name="keywords" content="lista de pensamentos, toughts list, node.js, bootstrap, full stack developer, engenheria de software, engenharia de software com metodologias ágeis, advogado trabalhista em curitiba">
+    <meta name="author" content="Wagner Chequeleiro Cordeiro">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!--Bootstrap Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <!--Montserrat Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!--CSS do projeto-->
+    <link rel="stylesheet" href="/css/styles.css">
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <title>Pensamentos</title>
+</head>
+<body>
+    <header class="container-fluid bg-light shadow">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <img src="/img/toughts_logo.png" alt="Toughts" id="logo" class="me-3">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/">Pensamentos</a>
+                        </li>
+                        {{#if session.userid}}
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="/toughts/dashboard">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="/logout">Sair</a>
+                            </li>                        
+                        {{else }}
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="/login">Entrar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="/register">Registrar</a>
+                            </li>
+                        {{/if}}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container pb-5">
+        <!-- Mensagens -->
+        {{#if messages.message}}
+            <div class="row justify-content-center align-items-center my-5">
+                <div class="col-auto alert alert-primary">
+                    {{messages.message}}
+                </div>
+            </div>
+        {{/if}}
+        <!-- Body -->
+        {{{body}}}
+    </main>
+    <footer class="footer fixed-bottom mt-auto py-3 bg-light shadow">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-10 col-md-6">
+                    <small class="text-center">Curso de Node.js do Zero a Maestria com diversos Projetos, <a href="https://www.udemy.com/course/nodejs-do-zero-a-maestria-com-diversos-projetos/" target="_blank">veja mais aqui</a>.</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>

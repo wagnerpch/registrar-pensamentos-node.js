@@ -1,0 +1,46 @@
+<div class="row justify-content-center align-items-center my-5">
+  <div class="col-auto">
+    <h1>Dashboard</h1>
+    <div class="row justify-content-center align-items-center mt-5">
+      <div class="col-auto">
+        <a href="/toughts/add" class="btn btn-dark shadow w-100">Criar pensamento</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row justify-content-center align-items-center my-5">
+  <div class="col-10 col-md-8 col-lg-6">
+    <h2 class="text-center">Meus pensamentos</h2>
+    <ul>
+      {{#each toughts}}
+        <li>
+          <div class="row align-items-center">
+                <div class="col-10">
+                    <p class="m-0">{{this.title}}</p>
+                </div>
+                <div class="col-2">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-6">
+                            <a href="/toughts/edit/{{this.id}}" class="text-decoration-none text-dark">
+                                <i class="bi bi-pencil-square fs-4"></i>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <form action="/toughts/remove" method="POST">
+                                <input type="hidden" name="id" value="{{this.id}}" />
+                                <button type="submit" class="btn fs-4">
+                                <i class="bi bi-x-lg"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+    {{#if emptyToughts}}
+        <p class="text-center">Você ainda não cadastrou pensamentos</p>
+    {{/if}}
+  </div>
+</div>

@@ -1,0 +1,66 @@
+<div class="row justify-content-center align-items-center mt-5">
+    <div class="col-auto">
+        <h1>Todos pensamentos</h1>
+    </div>
+</div>
+<div class="row justify-content-center align-items-center">
+    <div class="col-10 col-md-8">
+        <form action="/">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-12 col-md-10 my-2">
+                    {{#if search}}
+                        <input type="text" class="form-control shadow border border-warning" name="search" placeholder="Está buscando por algo?" value="{{search}}">
+                    {{else }}
+                        <input type="text" class="form-control shadow border border-warning" name="search" placeholder="Está buscando por algo?">
+                    {{/if}}
+                </div>
+                <div class="col-12 col-md-2 my-2">
+                    <button class="btn btn-secondary shadow w-100">Buscar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-10 col-md-8 mt-3">
+        {{#if toughtsQty}}
+            <p class="text-center">Foram encontrados {{toughtsQty}} pensamentos.</p>
+        {{else }}
+            <p class="text-center">Não foram encontrados pensamentos com o termo: <span class="fw-bold text-danger">{{search}}</span>.</p>
+        {{/if}}
+    </div>
+</div>
+<div class="row justify-content-center align-items-center mt-3">
+    <div class="col-10 col-md-8">
+        <div class="row justify-content-end align-items-center mt-3">
+            <div class="col-auto">
+                <p class="text-center fw-bold m-0">Ordenar por:</p>
+            </div>
+            <div class="col-1">
+                <form action="/" method="GET">
+                    <input type="hidden" name="search" value="{{this.search}}">
+                    <input type="hidden" name="order" value="new">
+                    <button class="btn btn-secondary shadow w-100"><i class="bi bi-arrow-up"></i></button>
+                </form>
+            </div>
+            <div class="col-1">
+                <form action="/" method="GET">
+                    <input type="hidden" name="search" value="{{this.search}}">
+                    <input type="hidden" name="order" value="old">
+                    <button class="btn btn-secondary shadow w-100"><i class="bi bi-arrow-down"></i></button>
+                </form>
+            </div>
+            <div class="col-auto">
+                <a href="/" class="btn btn-secondary shadow w-100">Limpar</a>
+            </div>
+        </div>
+    </div>
+</div>
+{{#each toughts}}
+<div class="row justify-content-center align-items-center my-3">
+    <div class="col-10">
+        <p class="fs-4">"{{this.title}}"</p>
+    </div>
+    <div class="col-10">
+        <p class="fst-italic text-black-50">por <span class="fw-bold text-warning">{{this.User.name}}</span></p>
+    </div>
+</div>
+{{/each}}

@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+:root {
+    --cor1: #845EC2;
+    --cor2: #D65DB1;
+    --cor3: #FF6F91;
+    --cor4: #FF9671;
+    --cor5: #FFC75F;
+    --cor6: #F9F871;
+    --cor7: #f9f8711f;
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    height: auto;
+    background-color: var(--cor7);
+}
+
+#logo{
+    width: 24px;
+}

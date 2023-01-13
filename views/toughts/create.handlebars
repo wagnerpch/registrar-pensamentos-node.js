@@ -1,0 +1,27 @@
+<div class="row justify-content-center align-items-center my-5">
+    <div class="col-10 col-md-8 col-lg-6">
+        <h1 class="text-center">Novo pensamento</h1>
+        <div class="row justify-content-center align-items-center mt-5">
+            <div class="col-6 col-md-4">
+                <a href="/toughts/dashboard" class="btn btn-dark shadow w-100">Voltar</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row justify-content-center align-items-center">
+    <div class="col-10 col-md-8 col-lg-6">
+        <form action="/toughts/add" method="POST">
+            <div class="my-3">
+                <label for="title" class="form-label fw-bold">Pensamento:</label>
+                <input type="text" class="form-control shadow border border-warning" name="title" id="title" placeholder="Digite o seu pensamento..." required>
+            </div>
+            <div class="my-5">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-6 col-md-4 my-5">
+                        <input type="submit" class="btn btn-dark shadow w-100" value="Salvar">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
