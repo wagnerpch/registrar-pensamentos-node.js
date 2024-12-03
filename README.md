@@ -59,7 +59,7 @@ npm run start
 - Dashboard = http://localhost:3000/toughts/dashboard
 - Adicionar pensamento = http://localhost:3000/toughts/add
 - Editar pensamento = http://localhost:3000/toughts/edit/:id
-- Deletar pensamento = http://localhost:3000/post/:id
+- Deletar pensamento = http://localhost:3000/toughts/remove
 
 # Autor
 
